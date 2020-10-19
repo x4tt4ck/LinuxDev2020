@@ -39,7 +39,7 @@ main(int argc, char **argv)
 
     print_file(head, starty+1, startx+1, height-2, storage, lines);
 
-    while((ch = getch()) != 'q') {
+    while((ch = getch()) != '\x1b') {
         switch(ch) {
             case ' ':
                 if (head + height - 2 != lines) {
