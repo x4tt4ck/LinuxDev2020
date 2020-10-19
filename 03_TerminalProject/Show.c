@@ -11,9 +11,18 @@ void print_file(int head, int starty, int startx, int height, char** storage, in
 int
 main(int argc, char **argv)
 {
+    int setheight, setwidth;
     if(argc != 2) {
-        printf("usage: %s FILE\n", argv[0]);
-        return 1;
+        if(argc != 4) {
+            printf("usage: %s FILE WIDTH HEIGHT\n", argv[0]);
+            exit(1);
+        } else {
+            setwidth = atoi(argv[2]);
+            setheight = atoi(argv[3]);
+        }
+    } else {
+        setheight = 46;
+        setwidth = 92;
     }
 
     WINDOW *my_win;
@@ -24,8 +33,8 @@ main(int argc, char **argv)
     initscr();
     cbreak();
     keypad(stdscr, TRUE);
-    height = 46;
-    width = 92;
+    height = setheight;
+    width = setwidth;
     starty = (LINES - height) / 2;
     startx = (COLS - width) / 2;
 

@@ -12,3 +12,4 @@
 - [ ] **Bonus** - PgUp, PgDown (maybe later)
 - [ ] **Bonus** - Line numbers (maybe later)
 - [ ] **Bonus** - Left, Right (maybe later)
+- [x] **Bonus** - Window size through args
