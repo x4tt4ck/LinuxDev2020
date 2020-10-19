@@ -80,8 +80,9 @@ get_file_size(const char* path, int* lines, int* size)
     char ch;
     FILE *fp = fopen(path, "r");
     if(!fp) {
-        printf("WOW WTF\n");
-        return;
+        endwin();
+        printf("[-] File open error!\n");
+        exit(1);
     }
     while(TRUE) {
         ch = fgetc(fp);
@@ -113,8 +114,9 @@ read_file(char **storage, int l, int w, const char* path)
     char ch;
     FILE *fp = fopen(path, "r");
     if(!fp) {
-        printf("WOW WTF\n");
-        return;
+        endwin();
+        printf("[-] File open error!");
+        exit(1);
     }
 
     for(int i = 0; i < l; ++i) {
