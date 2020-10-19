@@ -1,3 +1,3 @@
-# LinuxDev2020
+#Linux Application Development 2020
+##Course repository
 
-Changed readme
