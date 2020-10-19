@@ -5,7 +5,7 @@
 - [x] File loaded into a bordered window
 - [x] File is stored inside an array of strings
 - [x] SPACE key for scrolling
-- [ ] ESC key for quitting (temporarily doing it through Q)
+- [x] ESC key for quitting (temporarily doing it through Q)
 - [x] Widechars are not supported
 - [x] Added makefile, all binaries go to build/
 - [x] Pushed into repo
