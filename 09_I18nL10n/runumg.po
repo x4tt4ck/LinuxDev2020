@@ -13,17 +13,17 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: guess.c:14
+#: numg.c:14
 #, c-format
 msgid "I will guess the number X from 1 to 100.\n"
 msgstr "Я отгадываю число Х от 1 до 100.\n"
 
-#: guess.c:17
+#: numg.c:17
 #, c-format
 msgid "X > %d? "
 msgstr "Х > %d? "
 
-#: guess.c:36
+#: numg.c:36
 #, c-format
 msgid "I guessed. Number is %d, right?\n"
 msgstr "Я отгадал. Число %d, верно?\n"
