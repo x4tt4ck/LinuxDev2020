@@ -11,10 +11,11 @@ AC_CONFIG_HEADERS([config.h])
 AC_PROG_CC
 
 # Checks for libraries.
-AC_CHECK_LIB([ncursesw], [initscr])
+AC_CHECK_LIB([ncursesw], [initscr], [], AC_MSG_ERROR([Curses is needed]))
+AC_CHECK_LIB([missing], [notfound])
 
 # Checks for header files.
-AC_CHECK_HEADER([ncurses.h])
+AC_CHECK_HEADER([ncurses.h], [], AC_MSG_ERROR([No ncurses.h found]))
 
 # Checks for typedefs, structures, and compiler characteristics.
 

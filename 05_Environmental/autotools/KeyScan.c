@@ -1,4 +1,6 @@
 #include <ncurses.h>
+#include <unistd.h>
+#include <error.h>
 #include "config.h"
 
 #define DX 3
@@ -8,6 +10,10 @@ main()
 {
     WINDOW *win;
     int c = 0;
+
+    if(!isatty(0)) {
+        error(1, 0, "Not a tty");
+    }
 
     initscr();
     noecho();
