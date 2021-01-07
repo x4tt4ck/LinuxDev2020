@@ -1,6 +1,4 @@
-#include <ncurses.h>
 #include "pcre.h"
-//#include "config.h"
 
 #define DX 3
 
@@ -23,6 +21,8 @@ main()
 {
     WINDOW *winRe, *winIn, *winOut;
     char regex[128], str[128];
+
+    setlocale(LC_ALL, "");
 
     initscr();
     cbreak();
@@ -54,8 +54,9 @@ main()
         mvwgetnstr(winIn, 1, 1, str, 128);
 
         wprintw(winOut, " Entered: %s : %s\n", regex, str);
-        pcre_find(regex, str, winOut);
-        clear_win(winRe); clear_win(winIn);
+        pcre(winOut, regex, str);
+        clear_win(winRe); 
+        clear_win(winIn);
         update(winOut);
     } while (*regex);
 

@@ -1,19 +1,10 @@
-#include <ncurses.h>
 #include "pcre.h"
 
-#ifndef PCRE2_CODE_UNIT_WIDTH
-#define PCRE2_CODE_UNIT_WIDTH 8
-#endif
-
-#include <stdio.h>
-#include <string.h>
-#include <pcre2.h>
-
-int pcre_find(const char *str_pattern, const char *str_subject, WINDOW *win)
+void pcre(WINDOW *win, char *regex, char *str)
 {
     pcre2_code *re;
-    PCRE2_SPTR pattern = (PCRE2_SPTR)str_pattern;     /* PCRE2_SPTR is a pointer to unsigned code units of */
-    PCRE2_SPTR subject = (PCRE2_SPTR)str_subject;     /* the appropriate width (in this case, 8 bits). */
+    PCRE2_SPTR pattern = (PCRE2_SPTR) regex;   /* PCRE2_SPTR is a pointer to unsigned code units of */
+    PCRE2_SPTR subject = (PCRE2_SPTR) str;     /* the appropriate width (in this case, 8 bits). */
 
     int errnum;
     int i, rc;
@@ -26,11 +17,10 @@ int pcre_find(const char *str_pattern, const char *str_subject, WINDOW *win)
 
     subject_length = (PCRE2_SIZE)strlen((char *)subject);
 
-    #ifdef DISABLE_UTF 
-        // wprintw(win, " UTF_DISABLED\n", PCRE2_UCP);
-        re = pcre2_compile(pattern, PCRE2_ZERO_TERMINATED, 0, &errnum, &erroffs, NULL);
-    #else
+    #ifdef UTF 
         re = pcre2_compile(pattern, PCRE2_ZERO_TERMINATED, PCRE2_UCP, &errnum, &erroffs, NULL);
+    #else
+        re = pcre2_compile(pattern, PCRE2_ZERO_TERMINATED, 0, &errnum, &erroffs, NULL);
     #endif
 
     if (re == NULL) {
@@ -38,7 +28,7 @@ int pcre_find(const char *str_pattern, const char *str_subject, WINDOW *win)
         pcre2_get_error_message(errnum, buffer, sizeof(buffer));
         wprintw(win, " PCRE2 compilation failed at offset %d: %s\n", (int)erroffs,
                buffer);
-        return 1;
+        return;
     }
 
     match_data = pcre2_match_data_create_from_pattern(re, NULL);
@@ -56,7 +46,7 @@ int pcre_find(const char *str_pattern, const char *str_subject, WINDOW *win)
         }
         pcre2_match_data_free(match_data);   /* Release memory used for the match */
         pcre2_code_free(re);                 /*   data and the compiled pattern. */
-        return 1;
+        return;
     }
 
     ovector = pcre2_get_ovector_pointer(match_data);
@@ -70,5 +60,4 @@ int pcre_find(const char *str_pattern, const char *str_subject, WINDOW *win)
     pcre2_match_data_free(match_data);  /* Release the memory that was used */
     pcre2_code_free(re);                /* for the match data and the pattern. */
 
-    return 0;
 }
