@@ -2,6 +2,8 @@
 
 void pcre(WINDOW *win, char *regex, char *str)
 {
+    setlocale(LC_ALL, "");
+
     pcre2_code *re;
     PCRE2_SPTR pattern = (PCRE2_SPTR) regex;   /* PCRE2_SPTR is a pointer to unsigned code units of */
     PCRE2_SPTR subject = (PCRE2_SPTR) str;     /* the appropriate width (in this case, 8 bits). */
