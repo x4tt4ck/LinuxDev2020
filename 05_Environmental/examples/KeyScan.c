@@ -22,7 +22,11 @@ main()
     refresh();
 
     win = newwin(LINES-2*DX, COLS-2*DX, DX, DX);
+#ifdef KEYPAD
     keypad(win, TRUE);
+#else
+    keypad(win, FALSE);
+#endif
     scrollok(win, TRUE);
     do {
         wprintw(win, " Key: %d, Name: %s\n", c, keyname(c));

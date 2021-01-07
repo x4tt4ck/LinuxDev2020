@@ -20,6 +20,12 @@ AC_CHECK_HEADER([ncurses.h], [], AC_MSG_ERROR([No ncurses.h found]))
 # Checks for typedefs, structures, and compiler characteristics.
 
 # Checks for library functions.
+AC_ARG_ENABLE([keypad],
+   AS_HELP_STRING([--disable-keypad], [Disable input ESC-sequences recognition]))
+
+AS_IF([test "x$enable_keypad" != "xno"], [
+       AC_DEFINE(KEYPAD, [], [ESC-sequences recognition])
+])
 
 AC_CONFIG_FILES([Makefile])
 AC_OUTPUT
