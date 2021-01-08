@@ -21,5 +21,5 @@ AC_CHECK_HEADERS([stdlib.h])
 
 # Checks for library functions.
 
-AC_CONFIG_FILES([Makefile src/Makefile])
+AC_CONFIG_FILES([Makefile src/Makefilei tests/Makefile])
 AC_OUTPUT
