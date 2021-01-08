@@ -24,7 +24,7 @@
  *     buf_free(values);
  */
 
-#include "buf.h"
+#include "libbuf.h"
 
 struct buf {
     size_t capacity;

@@ -3,12 +3,18 @@
 #include "config.h"
 
 #ifndef BUF_INIT_CAPACITY
-    #define BUF_INIT_CAPACITY 8
+#  define BUF_INIT_CAPACITY 8
 #endif
 
 #ifndef BUF_ABORT
-    #define BUF_ABORT abort()
+#  define BUF_ABORT abort()
 #endif
+
+struct buf {
+    size_t capacity;
+    size_t size;
+    char buffer[];
+};
 
 #define buf_ptr(v) \
     ((struct buf *)((char *)(v) - offsetof(struct buf, buffer)))
@@ -50,4 +56,5 @@
 #define buf_clear(v) \
     ((v) ? (buf_ptr((v))->size = 0) : 0)
 
-void* buf_grow1(void *v, size_t esize, ptrdiff_t n);
+void *
+buf_grow1(void *v, size_t esize, ptrdiff_t n);
