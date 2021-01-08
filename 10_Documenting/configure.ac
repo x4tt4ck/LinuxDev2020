@@ -4,6 +4,7 @@
 AC_PREREQ([2.69])
 AC_INIT([FULL-PACKAGE-NAME], [VERSION], [BUG-REPORT-ADDRESS])
 AM_INIT_AUTOMAKE([foreign])
+DX_INIT_DOXYGEN(numg)
 AC_CONFIG_SRCDIR([numg.c])
 AC_CONFIG_HEADERS([config.h])
 
@@ -20,5 +21,5 @@ AC_CHECK_HEADERS([libintl.h locale.h])
 # Checks for library functions.
 AC_CHECK_FUNCS([setlocale])
 
-AC_CONFIG_FILES([Makefile])
+AC_CONFIG_FILES([Makefile Doxyfile])
 AC_OUTPUT
