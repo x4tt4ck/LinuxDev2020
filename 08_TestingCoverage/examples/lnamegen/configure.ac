@@ -3,7 +3,8 @@
 
 AC_PREREQ([2.69])
 AC_INIT([2], [2], [2])
-AM_INIT_AUTOMAKE
+AM_INIT_AUTOMAKE([foreign])
+LT_INIT([disable-static])
 AC_CONFIG_SRCDIR([src/namegen.h])
 AC_CONFIG_HEADERS([config.h])
 
