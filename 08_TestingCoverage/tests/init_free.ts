@@ -1,6 +1,6 @@
 #include "buf.h"
 
-#test test_init_free
+#test init_free
     float *a = 0;
     ck_assert_msg(buf_capacity(a) == 0, "capacity init");
     ck_assert_msg(buf_size(a) == 0, "size init");
