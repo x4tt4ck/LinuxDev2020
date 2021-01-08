@@ -6,7 +6,7 @@ AC_INIT([bufGrow], [1], [phild@01ab.wiki])
 AM_INIT_AUTOMAKE([foreign])
 PKG_CHECK_MODULES([CHECK], [check])
 LT_INIT([disable-static])
-AC_CONFIG_SRCDIR([src/libbuf.h])
+AC_CONFIG_SRCDIR([src/buf.h])
 AC_CONFIG_HEADERS([config.h])
 
 # Checks for programs.

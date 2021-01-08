@@ -24,13 +24,7 @@
  *     buf_free(values);
  */
 
-#include "libbuf.h"
-
-struct buf {
-    size_t capacity;
-    size_t size;
-    char buffer[];
-};
+#include "buf.h"
 
 void *
 buf_grow1(void *v, size_t esize, ptrdiff_t n)
