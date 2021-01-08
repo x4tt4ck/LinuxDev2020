@@ -2,9 +2,9 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.69])
-AC_INIT([FULL-PACKAGE-NAME], [VERSION], [BUG-REPORT-ADDRESS])
+AC_INIT([numg], [1.1], [phild@01ab.wiki])
 AM_INIT_AUTOMAKE([foreign])
-DX_INIT_DOXYGEN(numg)
+DX_INIT_DOXYGEN([numg])
 AC_CONFIG_SRCDIR([numg.c])
 AC_CONFIG_HEADERS([config.h])
 

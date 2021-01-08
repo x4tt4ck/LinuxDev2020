@@ -1,6 +1,8 @@
 bin_PROGRAMS=numg
 pkgdata_DATA=ru/LC_MESSAGES/numg.mo
 
+@DX_RULES@
+
 ru/LC_MESSAGES/numg.mo: runumg.po
 		mkdir -p `dirname $@`
 		msgfmt $< -o $@

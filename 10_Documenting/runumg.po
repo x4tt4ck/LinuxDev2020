@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: numg 0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-10 17:07+0300\n"
+"POT-Creation-Date: 2021-01-08 13:22+0300\n"
 "PO-Revision-Date: 2020-11-10 17:14+0300\n"
 "Last-Translator: ph1 <phild@01ab.wiki>\n"
 "Language-Team: Russian\n"
@@ -13,17 +13,35 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: numg.c:14
+#: numg.c:13
+#, fuzzy
+msgid ""
+"Simple number guesser \n"
+"\n"
+"Usage: ./numg [OPTIONS] \n"
+"\n"
+"    --help    display this help \n"
+"    --version display version \n"
+"    -r        use roman numbers instead arabic \n"
+msgstr ""
+"Простой угадыватель чисел \n"
+"\n"
+"Использование: ./numg [ПАРАМЕТРЫ] \n"
+"     --help    справка \n"
+"     --version версия \n"
+"     -r        римские цифры \n"
+
+#: numg.c:56
 #, c-format
 msgid "I will guess the number X from 1 to 100.\n"
 msgstr "Я отгадываю число Х от 1 до 100.\n"
 
-#: numg.c:17
+#: numg.c:61
 #, c-format
-msgid "X > %d? "
-msgstr "Х > %d? "
+msgid "X > %s? "
+msgstr ""
 
-#: numg.c:36
+#: numg.c:71
 #, c-format
-msgid "I guessed. Number is %d, right?\n"
-msgstr "Я отгадал. Число %d, верно?\n"
+msgid "I guessed. Number is %s, right?\n"
+msgstr "Я отгадал. Число %s, верно?\n"

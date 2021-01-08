@@ -11,17 +11,25 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: guess.c:14
+#: numg.c:44
+#, c-format
+msgid "Simple number guesser \n"
+"\n"
+"Usage: ./numg [OPTIONS] \n"
+"\n"
+"     --help    display this help \n"
+"     --version display version \n"
+"     -r        use roman numbers instead arabic \n"
+msgstr ""
+
+#: numg.c:58
 #, c-format
 msgid "I will guess the number X from 1 to 100.\n"
 msgstr ""
 
-#: guess.c:17
+#: numg.c:73
 #, c-format
-msgid "X > %d? "
+msgid "I guessed. Number is %s, right?\n"
 msgstr ""
 
-#: guess.c:26
-#, c-format
-msgid "I guessed. Number is %d, right?\n"
-msgstr ""
+
