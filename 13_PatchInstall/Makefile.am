@@ -1,5 +1,7 @@
 bin_PROGRAMS=numg
 pkgdata_DATA=ru/LC_MESSAGES/numg.mo
+pkgdatadir=$(localedir)/ru/LC_MESSAGES
+AM_CFLAGS = -D LOCALEDIR='"$(localedir)"'
 
 ru/LC_MESSAGES/numg.mo: runumg.po
 		mkdir -p `dirname $@`

@@ -7,6 +7,8 @@
 int
 main()
 {
+    bindtextdomain("numg", LOCALEDIR);
+    textdomain("numg");
     int left = 1, right = 100, flag;
     setlocale (LC_ALL, "");
     bindtextdomain ("numg", ".");
