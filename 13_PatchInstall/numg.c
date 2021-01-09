@@ -11,8 +11,6 @@ main()
     textdomain("numg");
     int left = 1, right = 100, flag;
     setlocale (LC_ALL, "");
-    bindtextdomain ("numg", ".");
-    textdomain ("numg");
     printf(_("I will guess the number X from 1 to 100.\n"));
 
     while(left < right) {
