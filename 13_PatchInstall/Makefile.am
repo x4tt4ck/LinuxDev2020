@@ -17,3 +17,4 @@ num.pot:	numg.pot numg.c
 
 gitclean:	maintainer-clean
 	git clean -fd
+	rm *~

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: numg 0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-10 17:07+0300\n"
+"POT-Creation-Date: 2021-01-09 04:54+0300\n"
 "PO-Revision-Date: 2020-11-10 17:14+0300\n"
 "Last-Translator: ph1 <phild@01ab.wiki>\n"
 "Language-Team: Russian\n"
@@ -13,17 +13,17 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: numg.c:14
+#: numg.c:16
 #, c-format
 msgid "I will guess the number X from 1 to 100.\n"
 msgstr "Я отгадываю число Х от 1 до 100.\n"
 
-#: numg.c:17
+#: numg.c:19
 #, c-format
 msgid "X > %d? "
 msgstr "Х > %d? "
 
-#: numg.c:36
+#: numg.c:28
 #, c-format
 msgid "I guessed. Number is %d, right?\n"
 msgstr "Я отгадал. Число %d, верно?\n"
